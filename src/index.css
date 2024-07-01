@@ -1,0 +1,31 @@
+:root {
+  --bg-color-basic: #1f002b;
+
+  --input-color-primary: #36173d;
+  --input-color-secondary: #e4229b;
+
+  --input-email-primary: #492752;
+  --input-email-error-border: #d0006e;
+
+  --primary-color: #e4229c;
+
+  --color-basic-1: #f2f3f5;
+  --color-basic-2: #c4c8cc;
+  --color-basic-3: #ffffff;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color-basic);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+}
+
+code {
+  font-family: 'Roboto', monospace;
+}
