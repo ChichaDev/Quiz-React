@@ -1,13 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-import type { Question } from '@/types';
+import { questions } from '@/constants/quiz-data';
 
-type UseQuestionProps = {
-  questions: Question[];
-};
-
-const useQuestion = ({ questions }: UseQuestionProps) => {
+const useQuestion = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [currentQuestion, setCurrentQuestion] = useState<number>(1);
@@ -22,7 +18,7 @@ const useQuestion = ({ questions }: UseQuestionProps) => {
 
   const question = useMemo(
     () => questions.find((q) => q.id === questionId),
-    [questions, questionId]
+    [questionId]
   );
 
   const handleNextQuestion = () => {

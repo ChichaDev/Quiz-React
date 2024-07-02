@@ -6,8 +6,8 @@ import ProgressBar from '@/components/progress-bar/ProgressBar';
 import { SingleAnswer } from '@/components/single-answer/SingleAnswer';
 import CustomButton from '@/components/ui/button/Button';
 import { Container } from '@/components/ui/container/Container.ui';
-import { questions } from '@/constants/quiz-data';
 import useQuestion from '@/hooks/useQuestion';
+import { setToLocalStorage } from '@/utils/getFromLocalStorage';
 
 const StyledSection = styled.section`
   background-color: var(--bg-color-basic);
@@ -30,7 +30,7 @@ const StyledWrapper = styled.div`
 `;
 
 export const QuizQuestion = () => {
-  const { question } = useQuestion({ questions });
+  const { handleNextQuestion, question, currentQuestion, totalQuestions } = useQuestion();
 
   const renderQuestion = () => {
     switch (question?.type) {
@@ -45,9 +45,16 @@ export const QuizQuestion = () => {
     }
   };
 
-  const { handleNextQuestion, currentQuestion, totalQuestions } = useQuestion({
-    questions
-  });
+  const handleNext = () => {
+    if (question) {
+      setToLocalStorage('order', currentQuestion);
+      setToLocalStorage('title', question.name);
+      setToLocalStorage('type', question.type);
+      setToLocalStorage('answer', '');
+    }
+
+    handleNextQuestion();
+  };
 
   return (
     <StyledSection>
@@ -56,7 +63,7 @@ export const QuizQuestion = () => {
           <ProgressBar currentStep={currentQuestion} totalSteps={totalQuestions} />
           <StyledH2>Question {question?.name}</StyledH2>
           {renderQuestion()}
-          <CustomButton onClick={handleNextQuestion}>Next</CustomButton>
+          <CustomButton onClick={handleNext}>Next</CustomButton>
         </StyledWrapper>
       </Container>
     </StyledSection>

@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { questions } from '@/constants/quiz-data';
 import useQuestion from '@/hooks/useQuestion';
 
 import BackBtn from '../../img/backdown.svg';
-import CustomButton from '../ui/button/Button';
 import { Container } from '../ui/container/Container.ui';
 
 type ProgressBarProps = {
@@ -15,8 +13,8 @@ type ProgressBarProps = {
 
 const ProgressBarContainer = styled.div`
   width: 100%;
-  height: 24px;
-  background-color: #f0f0f0;
+  height: 4px;
+  background-color: #e8eaf2;
   border-radius: 12px;
   overflow: hidden;
 `;
@@ -24,26 +22,59 @@ const ProgressBarContainer = styled.div`
 const ProgressBarFill = styled.div<{ percentage: number }>`
   height: 100%;
   width: ${({ percentage }) => `${percentage}%`};
-  background-color: #3498db;
+  background-color: var(--primary-color);
   border-radius: 12px;
   transition: width 0.3s ease-in-out;
 `;
 
+const BackDownImg = styled.img`
+  width: 25px;
+  height: 25px;
+`;
+
+const BackDownBtn = styled.button`
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+`;
+
+const StyledWrapper = styled.div`
+  display: flex;
+  flex: 1;
+`;
+
+const StyledFlex = styled.div`
+  display: flex;
+`;
+
 const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep, totalSteps }) => {
   const percentage = (currentStep / totalSteps) * 100;
-  const { handlePreviousQuestion } = useQuestion({ questions });
+  const { handlePreviousQuestion } = useQuestion();
 
   return (
     <Container>
-      <h2>
-        {currentStep}/{totalSteps}
-      </h2>
+      <StyledFlex>
+        <StyledWrapper>
+          <BackDownBtn onClick={handlePreviousQuestion}>
+            <BackDownImg alt='back' src={BackBtn} />
+          </BackDownBtn>
+        </StyledWrapper>
+        <StyledWrapper>
+          <h2>
+            <span style={{ color: 'var(--primary-color)' }}>{currentStep}</span>
+            <span style={{ color: 'var(--color-basic-4)' }}>/</span>
+            <span style={{ color: 'var(--color-basic-4)' }}>{totalSteps}</span>
+          </h2>
+        </StyledWrapper>
+      </StyledFlex>
+
       <ProgressBarContainer>
         <ProgressBarFill percentage={percentage} />
       </ProgressBarContainer>
-      <CustomButton onClick={handlePreviousQuestion}>
-        <img alt='back' src={BackBtn} />
-      </CustomButton>
     </Container>
   );
 };
