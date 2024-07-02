@@ -6,11 +6,6 @@ import useQuestion from '@/hooks/useQuestion';
 import BackBtn from '../../img/backdown.svg';
 import { Container } from '../ui/container/Container.ui';
 
-type ProgressBarProps = {
-  currentStep: number;
-  totalSteps: number;
-};
-
 const ProgressBarContainer = styled.div`
   width: 100%;
   height: 4px;
@@ -51,23 +46,26 @@ const StyledFlex = styled.div`
   display: flex;
 `;
 
-const ProgressBar: React.FC<ProgressBarProps> = ({ currentStep, totalSteps }) => {
-  const percentage = (currentStep / totalSteps) * 100;
-  const { handlePreviousQuestion } = useQuestion();
+const ProgressBar = () => {
+  const { currentQuestion, totalQuestions, handlePreviousQuestion } = useQuestion();
+
+  const percentage = (currentQuestion / totalQuestions) * 100;
 
   return (
     <Container>
       <StyledFlex>
         <StyledWrapper>
-          <BackDownBtn onClick={handlePreviousQuestion}>
-            <BackDownImg alt='back' src={BackBtn} />
-          </BackDownBtn>
+          {currentQuestion > 1 && (
+            <BackDownBtn onClick={handlePreviousQuestion}>
+              <BackDownImg alt='back' src={BackBtn} />
+            </BackDownBtn>
+          )}
         </StyledWrapper>
         <StyledWrapper>
           <h2>
-            <span style={{ color: 'var(--primary-color)' }}>{currentStep}</span>
+            <span style={{ color: 'var(--primary-color)' }}>{currentQuestion}</span>
             <span style={{ color: 'var(--color-basic-4)' }}>/</span>
-            <span style={{ color: 'var(--color-basic-4)' }}>{totalSteps}</span>
+            <span style={{ color: 'var(--color-basic-4)' }}>{totalQuestions}</span>
           </h2>
         </StyledWrapper>
       </StyledFlex>
