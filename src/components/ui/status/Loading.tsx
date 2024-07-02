@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import { Container } from '../container/Container.ui';
+import { Container, StyledP } from '@/constants/theme';
 
 const fill = keyframes`
   0% {
@@ -50,13 +50,6 @@ const LoaderContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
-`;
-
-const LoaderDescription = styled.div`
-  color: var(--color-basic-3);
-  font-size: 17px;
-  font-weight: 600;
 `;
 
 interface LoadingProps {
@@ -92,7 +85,7 @@ const Loading: React.FC<LoadingProps> = ({ onLoadingComplete }) => {
           </svg>
           <Text>{percentage}%</Text>
         </SpinnerContainer>
-        <LoaderDescription>Finding collections for you...</LoaderDescription>
+        <StyledP>Finding collections for you...</StyledP>
       </LoaderContainer>
     </Container>
   );

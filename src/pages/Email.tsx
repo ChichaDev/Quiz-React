@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
-import EmailForm from '@/components/ui/email-form/EmailForm';
+import EmailInput from '@/components/email-input/EmailInput';
 import Loading from '@/components/ui/status/Loading';
+import { Container, StyledSection } from '@/constants/theme';
 
 const Email: React.FC = () => {
   const [loadingComplete, setLoadingComplete] = useState<boolean>(false);
@@ -11,13 +12,15 @@ const Email: React.FC = () => {
   };
 
   return (
-    <div>
-      {loadingComplete ? (
-        <EmailForm />
-      ) : (
-        <Loading onLoadingComplete={handleLoadingComplete} />
-      )}
-    </div>
+    <StyledSection>
+      <Container>
+        {loadingComplete ? (
+          <EmailInput />
+        ) : (
+          <Loading onLoadingComplete={handleLoadingComplete} />
+        )}
+      </Container>
+    </StyledSection>
   );
 };
 

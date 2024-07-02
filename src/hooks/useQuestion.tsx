@@ -22,12 +22,11 @@ const useQuestion = () => {
   );
 
   const handleNextQuestion = () => {
-    if (questionId < questions.length) {
-      navigate(`/quiz/${questionId + 1}`);
-    }
-
     if (currentQuestion < totalQuestions) {
       setCurrentQuestion((prev) => prev + 1);
+      navigate(`/quiz/${questionId + 1}`);
+    } else {
+      navigate('/email');
     }
   };
 

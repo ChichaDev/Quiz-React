@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Container } from '@/constants/theme';
 import useQuestion from '@/hooks/useQuestion';
 
 import BackBtn from '../../img/backdown.svg';
-import { Container } from '../ui/container/Container.ui';
 
 const ProgressBarContainer = styled.div`
   width: 100%;

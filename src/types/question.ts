@@ -6,6 +6,7 @@ export type Answer = {
 export type Question = {
   id: number;
   name: string;
+  description?: string;
   type: 'single' | 'multiple' | 'bubble';
   answers: Answer[];
 };

@@ -21,7 +21,8 @@ export const questions: Question[] = [
       { text: 'French' },
       { text: 'German' },
       { text: 'Spanish' }
-    ]
+    ],
+    description: 'Choose language'
   },
   {
     id: 2,
@@ -31,7 +32,8 @@ export const questions: Question[] = [
       { text: 'Female', img: Female },
       { text: 'Male', img: Male },
       { text: 'Other', img: Other }
-    ]
+    ],
+    description: 'Please share how do you identify yourself'
   },
   {
     id: 3,
@@ -67,6 +69,7 @@ export const questions: Question[] = [
       { text: 'Romance', img: Love },
       { text: 'Young Adult', img: Young },
       { text: 'Bad Boy', img: Cowboy }
-    ]
+    ],
+    description: 'Choose up to 3 topics you like'
   }
 ];

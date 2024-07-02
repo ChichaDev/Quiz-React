@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import useAnswerSelection from '@/hooks/useAnswerSelection';
 import useQuestion from '@/hooks/useQuestion';
 import type { Answer } from '@/types';
-import { setToLocalStorage } from '@/utils/getFromLocalStorage';
+import { getFromLocalStorage, setToLocalStorage } from '@/utils/getFromLocalStorage';
 
 import AnswerOption from '../answer-option/AnswerOption';
 import CustomButton from '../ui/button/Button';
@@ -27,7 +27,6 @@ export const MultipleAnswer = ({ answers }: MultipleAnswerProps) => {
 
   const handleCombineLocalStorage = () => {
     if (question) {
-      const key = `quiz${currentQuestion}`;
       const quizData = {
         order: currentQuestion + 1,
         title: question.name,
@@ -35,7 +34,11 @@ export const MultipleAnswer = ({ answers }: MultipleAnswerProps) => {
         answer: selectedAnswers
       };
 
-      setToLocalStorage(key, quizData);
+      const existingResults = getFromLocalStorage('quizResults', []);
+
+      const updatedResults = [...existingResults, quizData];
+
+      setToLocalStorage('quizResults', updatedResults);
     }
 
     handleNextQuestion();

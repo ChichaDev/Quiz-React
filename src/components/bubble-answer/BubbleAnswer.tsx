@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import useAnswerSelection from '@/hooks/useAnswerSelection';
 import useQuestion from '@/hooks/useQuestion';
 import type { Answer } from '@/types';
-import { setToLocalStorage } from '@/utils/getFromLocalStorage';
+import { getFromLocalStorage, setToLocalStorage } from '@/utils/getFromLocalStorage';
 
 import AnswerOption from '../answer-option/AnswerOption';
 import CustomButton from '../ui/button/Button';
@@ -31,7 +31,6 @@ export const BubbleAnswer = ({ answers }: BubbleAnswerProps) => {
 
   const handleCombineLocalStorage = () => {
     if (question) {
-      const key = `quiz${currentQuestion}`;
       const quizData = {
         order: currentQuestion + 1,
         title: question.name,
@@ -39,11 +38,16 @@ export const BubbleAnswer = ({ answers }: BubbleAnswerProps) => {
         answer: selectedAnswers
       };
 
-      setToLocalStorage(key, quizData);
+      const existingResults = getFromLocalStorage('quizResults', []);
+
+      const updatedResults = [...existingResults, quizData];
+
+      setToLocalStorage('quizResults', updatedResults);
     }
 
     handleNextQuestion();
   };
+
   return (
     <>
       <BubbleContainer>
@@ -58,13 +62,13 @@ export const BubbleAnswer = ({ answers }: BubbleAnswerProps) => {
             {item.text}
           </AnswerOption>
         ))}
-        <CustomButton
-          disabled={selectedAnswers.length === 0}
-          onClick={handleCombineLocalStorage}
-        >
-          Next
-        </CustomButton>
       </BubbleContainer>
+      <CustomButton
+        disabled={selectedAnswers.length === 0}
+        onClick={handleCombineLocalStorage}
+      >
+        Next
+      </CustomButton>
     </>
   );
 };
