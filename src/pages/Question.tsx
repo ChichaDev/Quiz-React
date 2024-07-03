@@ -1,13 +1,9 @@
 import styled from 'styled-components';
 
 import ProgressBar from '@/components/progress-bar/ProgressBar';
-import { Container, StyledH2, StyledP } from '@/constants/theme';
+import { Container, StyledH2, StyledP, StyledSection } from '@/constants/theme';
 import useQuestion from '@/hooks/useQuestion';
-import { renderQuestion } from '@/utils/renderQuestion';
-
-const StyledSection = styled.section`
-  background-color: var(--bg-color-basic);
-`;
+import { getQuestionComponent } from '@/utils/getQuestionComponent';
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -17,7 +13,7 @@ const StyledWrapper = styled.div`
   gap: 24px;
 `;
 
-export const QuizQuestion = () => {
+export const Question = () => {
   const { question } = useQuestion();
 
   return (
@@ -27,7 +23,7 @@ export const QuizQuestion = () => {
           <ProgressBar />
           <StyledH2>Question {question?.name}</StyledH2>
           {question?.description && <StyledP>{question.description}</StyledP>}
-          {renderQuestion(question)}
+          {getQuestionComponent(question)}
         </StyledWrapper>
       </Container>
     </StyledSection>

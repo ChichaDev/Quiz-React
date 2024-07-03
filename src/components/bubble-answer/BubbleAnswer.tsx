@@ -1,56 +1,22 @@
-import styled from 'styled-components';
-
-import useAnswerSelection from '@/hooks/useAnswerSelection';
-import useQuestion from '@/hooks/useQuestion';
+import useSaveQuizResults from '@/hooks/useSaveQuizResults';
 import type { Answer } from '@/types';
-import { getFromLocalStorage, setToLocalStorage } from '@/utils/getFromLocalStorage';
 
 import AnswerOption from '../answer-option/AnswerOption';
 import CustomButton from '../ui/button/Button';
+
+import { StyledBubbleContainer, StyledBubbleImage, StyledDiv } from './BubbleAnswer.ui';
 
 type BubbleAnswerProps = {
   answers: Answer[];
 };
 
-const BubbleContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-  align-items: center;
-  justify-items: center;
-`;
-
-const BubbleImage = styled.img`
-  max-width: 100%;
-  height: auto;
-`;
-
 export const BubbleAnswer = ({ answers }: BubbleAnswerProps) => {
-  const { selectedAnswers, handleSelectAnswer } = useAnswerSelection({ multiple: true });
-  const { handleNextQuestion, question, currentQuestion } = useQuestion();
-
-  const handleCombineLocalStorage = () => {
-    if (question) {
-      const quizData = {
-        order: currentQuestion + 1,
-        title: question.name,
-        type: question.type,
-        answer: selectedAnswers
-      };
-
-      const existingResults = getFromLocalStorage('quizResults', []);
-
-      const updatedResults = [...existingResults, quizData];
-
-      setToLocalStorage('quizResults', updatedResults);
-    }
-
-    handleNextQuestion();
-  };
+  const { selectedAnswers, handleSelectAnswer, handleSaveToLocalStorage } =
+    useSaveQuizResults(true);
 
   return (
-    <>
-      <BubbleContainer>
+    <StyledDiv>
+      <StyledBubbleContainer>
         {answers.map((item, index) => (
           <AnswerOption
             key={index}
@@ -58,17 +24,17 @@ export const BubbleAnswer = ({ answers }: BubbleAnswerProps) => {
             checked={selectedAnswers.includes(item.text)}
             onClick={() => handleSelectAnswer(item)}
           >
-            {item.img && <BubbleImage alt='emoji' src={item.img} />}
+            {item.img && <StyledBubbleImage alt='emoji' src={item.img} />}
             {item.text}
           </AnswerOption>
         ))}
-      </BubbleContainer>
+      </StyledBubbleContainer>
       <CustomButton
         disabled={selectedAnswers.length === 0}
-        onClick={handleCombineLocalStorage}
+        onClick={handleSaveToLocalStorage}
       >
         Next
       </CustomButton>
-    </>
+    </StyledDiv>
   );
 };

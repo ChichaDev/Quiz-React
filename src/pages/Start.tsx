@@ -9,7 +9,7 @@ const QuizStartWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const QuizStart = () => (
+export const Start = () => (
   <StyledSection>
     <Container>
       <QuizStartWrapper>

@@ -1,4 +1,8 @@
-import { AnswerButton, Checkbox, RoundAnswerButton } from './AnswerOption.ui';
+import {
+  StyledAnswerButton,
+  StyledCheckbox,
+  StyledRoundAnswerButton
+} from './AnswerOption.ui';
 
 import type { ReactNode } from 'react';
 
@@ -19,11 +23,11 @@ const AnswerOption = ({
   children,
   round = false
 }: AnswerOptionProps) => {
-  const ButtonComponent = round ? RoundAnswerButton : AnswerButton;
+  const ButtonComponent = round ? StyledRoundAnswerButton : StyledAnswerButton;
   return (
     <ButtonComponent checked={checked} onClick={onClick} disabled={disabled}>
       {children}
-      {showCheckbox && <Checkbox checked={checked} readOnly />}
+      {showCheckbox && <StyledCheckbox checked={checked} readOnly />}
     </ButtonComponent>
   );
 };

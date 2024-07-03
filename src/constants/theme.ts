@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const StyledSection = styled.section`
   background-color: var(--bg-color-basic);
-  padding-top: 60px;
+  padding-top: 15px;
 `;
 
 export const Container = styled.div`

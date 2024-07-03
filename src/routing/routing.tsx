@@ -2,16 +2,16 @@ import { Route, createBrowserRouter, createRoutesFromElements } from 'react-rout
 
 import Email from '@/pages/Email';
 import { Error } from '@/pages/Error';
-import { QuizQuestion } from '@/pages/QuizQuestion';
-import { QuizStart } from '@/pages/QuizStart';
+import { Question } from '@/pages/Question';
 import { Root } from '@/pages/Root';
+import { Start } from '@/pages/Start';
 import Success from '@/pages/Success';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Root />}>
-      <Route path='/' element={<QuizStart />} />
-      <Route path='/quiz/:id' element={<QuizQuestion />} />
+      <Route path='/' element={<Start />} />
+      <Route path='/quiz/:id' element={<Question />} />
       <Route path='/email' element={<Email />} />
       <Route path='/success' element={<Success />} />
       <Route path='*' element={<Error />} />

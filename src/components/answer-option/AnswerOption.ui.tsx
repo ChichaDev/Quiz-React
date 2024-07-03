@@ -4,7 +4,7 @@ type AnswerButtonProps = {
   checked?: boolean;
 };
 
-export const AnswerButton = styled.button<AnswerButtonProps>`
+export const StyledAnswerButton = styled.button<AnswerButtonProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,7 +28,7 @@ export const AnswerButton = styled.button<AnswerButtonProps>`
   }
 `;
 
-export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
+export const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
   margin-left: 8px;
   appearance: none;
   width: 16px;
@@ -63,7 +63,7 @@ export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
 
 type RoundAnswerButtonProps = AnswerButtonProps;
 
-export const RoundAnswerButton = styled(AnswerButton)<RoundAnswerButtonProps>`
+export const StyledRoundAnswerButton = styled(StyledAnswerButton)<RoundAnswerButtonProps>`
   flex-direction: column;
   justify-content: center;
   gap: 6px;

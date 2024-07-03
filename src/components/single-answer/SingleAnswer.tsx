@@ -1,65 +1,42 @@
-import styled from 'styled-components';
-
-import useAnswerSelection from '@/hooks/useAnswerSelection';
-import useQuestion from '@/hooks/useQuestion';
+import useSaveQuizResults from '@/hooks/useSaveQuizResults';
 import type { Answer } from '@/types';
-import { getFromLocalStorage, setToLocalStorage } from '@/utils/getFromLocalStorage';
 
 import AnswerOption from '../answer-option/AnswerOption';
 import CustomButton from '../ui/button/Button';
+
+import { BubbleImage, StyledContent, StyledDiv } from './SingleAnswer.ui';
 
 type SingleAnswerProps = {
   answers: Answer[];
 };
 
-const BubbleImage = styled.img`
-  max-width: 100%;
-  height: auto;
-`;
-
 export const SingleAnswer = ({ answers }: SingleAnswerProps) => {
-  const { selectedAnswers, handleSelectAnswer } = useAnswerSelection({ multiple: false });
-
-  const { handleNextQuestion, question, currentQuestion } = useQuestion();
-
-  const handleCombineLocalStorage = () => {
-    if (question) {
-      const quizData = {
-        order: currentQuestion + 1,
-        title: question.name,
-        type: question.type,
-        answer: selectedAnswers
-      };
-
-      const existingResults = getFromLocalStorage('quizResults', []);
-
-      const updatedResults = [...existingResults, quizData];
-
-      setToLocalStorage('quizResults', updatedResults);
-    }
-
-    handleNextQuestion();
-  };
+  const { selectedAnswers, handleSelectAnswer, handleSaveToLocalStorage } =
+    useSaveQuizResults(false);
 
   return (
-    <>
-      {answers.map((item, index) => (
-        <AnswerOption
-          checked={selectedAnswers.includes(item.text)}
-          onClick={() => handleSelectAnswer(item)}
-          key={index}
-        >
-          {item.img && <BubbleImage alt='gender' src={item.img} />}
-          {item.text}
-        </AnswerOption>
-      ))}
+    <StyledDiv>
+      <StyledDiv>
+        {answers.map((item, index) => (
+          <AnswerOption
+            checked={selectedAnswers.includes(item.text)}
+            onClick={() => handleSelectAnswer(item)}
+            key={index}
+          >
+            <StyledContent>
+              {item.img && <BubbleImage alt='gender' src={item.img} />}
+              {item.text}
+            </StyledContent>
+          </AnswerOption>
+        ))}
+      </StyledDiv>
 
       <CustomButton
         disabled={selectedAnswers.length === 0}
-        onClick={handleCombineLocalStorage}
+        onClick={handleSaveToLocalStorage}
       >
         Next
       </CustomButton>
-    </>
+    </StyledDiv>
   );
 };

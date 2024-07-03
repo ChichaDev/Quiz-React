@@ -9,7 +9,7 @@ interface Question {
   name: string;
 }
 
-export const renderQuestion = (question: Question | undefined) => {
+export const getQuestionComponent = (question: Question | undefined) => {
   if (!question) {
     return <p>Unknown question type</p>;
   }
