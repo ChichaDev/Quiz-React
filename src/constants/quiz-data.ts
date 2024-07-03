@@ -15,6 +15,7 @@ export const questions: Question[] = [
   {
     id: 1,
     type: 'single',
+    select: 'single',
     name: 'What is your preferred language?',
     answers: [
       { text: 'English' },
@@ -27,6 +28,7 @@ export const questions: Question[] = [
   {
     id: 2,
     type: 'single',
+    select: 'single',
     name: 'What gender do you identify with?',
     answers: [
       { text: 'Female', img: Female },
@@ -38,6 +40,7 @@ export const questions: Question[] = [
   {
     id: 3,
     type: 'single',
+    select: 'single',
     name: 'What is your age?',
     answers: [
       { text: '18-29 years' },
@@ -49,6 +52,7 @@ export const questions: Question[] = [
   {
     id: 4,
     type: 'multiple',
+    select: 'multiple',
     name: 'What do you hate the most in a book?',
     answers: [
       { text: 'Lack of logic' },
@@ -60,6 +64,7 @@ export const questions: Question[] = [
   {
     id: 5,
     type: 'bubble',
+    select: 'multiple',
     name: 'What are your favorite topics?',
     answers: [
       { text: 'Werewolf', img: Wolf },

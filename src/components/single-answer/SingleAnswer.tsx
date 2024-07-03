@@ -1,4 +1,4 @@
-import useSaveQuizResults from '@/hooks/useSaveQuizResults';
+import { useQuiz } from '@/hooks/useQuiz';
 import type { Answer } from '@/types';
 
 import AnswerOption from '../answer-option/AnswerOption';
@@ -11,8 +11,7 @@ type SingleAnswerProps = {
 };
 
 export const SingleAnswer = ({ answers }: SingleAnswerProps) => {
-  const { selectedAnswers, handleSelectAnswer, handleSaveToLocalStorage } =
-    useSaveQuizResults(false);
+  const { selectedAnswers, handleSelectAnswer, handleNextQuestion } = useQuiz();
 
   return (
     <StyledDiv>
@@ -30,11 +29,7 @@ export const SingleAnswer = ({ answers }: SingleAnswerProps) => {
           </AnswerOption>
         ))}
       </StyledDiv>
-
-      <CustomButton
-        disabled={selectedAnswers.length === 0}
-        onClick={handleSaveToLocalStorage}
-      >
+      <CustomButton disabled={selectedAnswers.length === 0} onClick={handleNextQuestion}>
         Next
       </CustomButton>
     </StyledDiv>

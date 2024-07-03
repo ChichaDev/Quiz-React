@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Container, StyledH2, StyledP } from '@/constants/theme';
-import useQuestion from '@/hooks/useQuestion';
+import { useQuiz } from '@/hooks/useQuiz';
 import { getFromLocalStorage, setToLocalStorage } from '@/utils/getFromLocalStorage';
 import { validateEmail } from '@/utils/validateEmail';
 
@@ -21,7 +21,7 @@ const EmailInput: React.FC = () => {
   const [error, setError] = useState<string>('');
 
   const navigate = useNavigate();
-  const { totalQuestions } = useQuestion();
+  const { totalQuestions } = useQuiz();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

@@ -1,7 +1,5 @@
-import React from 'react';
-
 import { Container } from '@/constants/theme';
-import useQuestion from '@/hooks/useQuestion';
+import { useQuiz } from '@/hooks/useQuiz';
 
 import BackBtn from '../../img/backdown.svg';
 
@@ -15,7 +13,7 @@ import {
 } from './ProgressBar.ui';
 
 const ProgressBar = () => {
-  const { currentQuestion, totalQuestions, handlePreviousQuestion } = useQuestion();
+  const { currentQuestion, totalQuestions, handlePreviousQuestion } = useQuiz();
 
   const percentage = (currentQuestion / totalQuestions) * 100;
 

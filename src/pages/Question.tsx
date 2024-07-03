@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import ProgressBar from '@/components/progress-bar/ProgressBar';
 import { Container, StyledH2, StyledP, StyledSection } from '@/constants/theme';
-import useQuestion from '@/hooks/useQuestion';
+import { useQuiz } from '@/hooks/useQuiz';
 import { getQuestionComponent } from '@/utils/getQuestionComponent';
 
 const StyledWrapper = styled.div`
@@ -14,8 +14,7 @@ const StyledWrapper = styled.div`
 `;
 
 export const Question = () => {
-  const { question } = useQuestion();
-
+  const { question } = useQuiz();
   return (
     <StyledSection>
       <Container>

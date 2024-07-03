@@ -1,4 +1,4 @@
-import useSaveQuizResults from '@/hooks/useSaveQuizResults';
+import { useQuiz } from '@/hooks/useQuiz';
 import type { Answer } from '@/types';
 
 import AnswerOption from '../answer-option/AnswerOption';
@@ -11,8 +11,7 @@ type BubbleAnswerProps = {
 };
 
 export const BubbleAnswer = ({ answers }: BubbleAnswerProps) => {
-  const { selectedAnswers, handleSelectAnswer, handleSaveToLocalStorage } =
-    useSaveQuizResults(true);
+  const { selectedAnswers, handleSelectAnswer, handleNextQuestion } = useQuiz();
 
   return (
     <StyledDiv>
@@ -29,10 +28,7 @@ export const BubbleAnswer = ({ answers }: BubbleAnswerProps) => {
           </AnswerOption>
         ))}
       </StyledBubbleContainer>
-      <CustomButton
-        disabled={selectedAnswers.length === 0}
-        onClick={handleSaveToLocalStorage}
-      >
+      <CustomButton disabled={selectedAnswers.length === 0} onClick={handleNextQuestion}>
         Next
       </CustomButton>
     </StyledDiv>
