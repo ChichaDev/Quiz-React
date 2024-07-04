@@ -48,16 +48,16 @@ export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const handleLanguageChange = (answer: Answer) => {
     if (currentQuestion === 1) {
       switch (answer.text) {
-        case 'answer1_1':
+        case 'question1.answers.answer1':
           changeLanguage('en');
           break;
-        case 'answer1_2':
+        case 'question1.answers.answer2':
           changeLanguage('fr');
           break;
-        case 'answer1_3':
+        case 'question1.answers.answer3':
           changeLanguage('de');
           break;
-        case 'answer1_4':
+        case 'question1.answers.answer4':
           changeLanguage('es');
           break;
         default:

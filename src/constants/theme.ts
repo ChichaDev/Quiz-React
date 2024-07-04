@@ -1,6 +1,19 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+export const theme = {
+  colors: {
+    primary: '#0070f3',
+    basic4: '#333'
+    // другие цвета
+  },
+  fonts: {
+    main: 'Arial, sans-serif'
+  }
+};
+
+export type ThemeType = typeof theme;
+
 export const StyledSection = styled.section`
   background-color: var(--bg-color-basic);
   padding-top: 15px;
