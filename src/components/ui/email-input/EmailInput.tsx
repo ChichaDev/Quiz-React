@@ -2,8 +2,8 @@ import { t } from 'i18next';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { localStorageAdapter } from '@/api';
 import { Container, StyledH2, StyledP } from '@/constants/theme';
+import { useApi } from '@/hooks/useApi';
 import { useQuiz } from '@/hooks/useQuiz';
 import { validateEmail } from '@/utils/validateEmail';
 
@@ -22,6 +22,8 @@ const EmailInput: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [error, setError] = useState<string>('');
 
+  const { quizRepository } = useApi();
+
   const navigate = useNavigate();
   const { totalQuestions } = useQuiz();
 
@@ -33,17 +35,18 @@ const EmailInput: React.FC = () => {
       setError('');
       const key = 'quizResults';
       const emailData = {
+        id: totalQuestions + 1,
         order: totalQuestions + 1,
         title: 'Email',
         type: 'email',
         answer: email
       };
 
-      const existingResults = localStorageAdapter.getItem('quizResults', []);
+      const existingResults = quizRepository.fetchQuizData('quizResults');
 
       const updatedResults = [...existingResults, emailData];
 
-      localStorageAdapter.setItem(key, updatedResults);
+      quizRepository.saveQuizData(key, updatedResults);
       navigate('/success');
     }
   };

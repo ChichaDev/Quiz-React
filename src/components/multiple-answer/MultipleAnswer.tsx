@@ -30,7 +30,7 @@ export const MultipleAnswer = ({ answers }: MultipleAnswerProps) => {
         ))}
       </StyledDiv>
       <CustomButton disabled={selectedAnswers.length === 0} onClick={handleNextQuestion}>
-        Next
+        {t('Next')}
       </CustomButton>
     </StyledDiv>
   );

@@ -2,8 +2,8 @@ import { t } from 'i18next';
 import React, { createContext, useState, useMemo, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { localStorageAdapter } from '@/api';
 import { questions } from '@/constants/quiz-data';
+import { useApi } from '@/hooks/useApi';
 import useLanguage from '@/hooks/useLanguage';
 import type { Answer, Question } from '@/types';
 
@@ -22,6 +22,8 @@ interface QuizContextProps {
 export const QuizContext = createContext<QuizContextProps | undefined>(undefined);
 
 export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { quizRepository } = useApi();
+
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { changeLanguage } = useLanguage();
@@ -117,7 +119,7 @@ export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children
       answer: localizedAnswers
     };
 
-    const existingResults: Question[] = localStorageAdapter.getItem('quizResults', []);
+    const existingResults: Question[] = quizRepository.fetchQuizData('quizResults') || [];
 
     const existingIndex = existingResults.findIndex(
       (result) => result.order === currentQuestion
@@ -129,7 +131,7 @@ export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children
       existingResults.push(quizData);
     }
 
-    localStorageAdapter.setItem('quizResults', existingResults);
+    quizRepository.saveQuizData('quizResults', existingResults);
   };
 
   return (

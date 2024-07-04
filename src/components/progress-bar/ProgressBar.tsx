@@ -1,4 +1,5 @@
 import { Container } from '@/constants/theme';
+import { StyledH2 } from '@/constants/theme';
 import { useQuiz } from '@/hooks/useQuiz';
 
 import BackBtn from '../../img/backdown.svg';
@@ -9,6 +10,9 @@ import {
   ProgressBarContainer,
   ProgressBarFill,
   StyledFlex,
+  StyledQuestionNumber,
+  StyledSeparator,
+  StyledTotalQuestions,
   StyledWrapper
 } from './ProgressBar.ui';
 
@@ -28,11 +32,11 @@ const ProgressBar = () => {
           )}
         </StyledWrapper>
         <StyledWrapper>
-          <h2>
-            <span style={{ color: 'var(--primary-color)' }}>{currentQuestion}</span>
-            <span style={{ color: 'var(--color-basic-4)' }}>/</span>
-            <span style={{ color: 'var(--color-basic-4)' }}>{totalQuestions}</span>
-          </h2>
+          <StyledH2>
+            <StyledQuestionNumber>{currentQuestion}</StyledQuestionNumber>
+            <StyledSeparator>/</StyledSeparator>
+            <StyledTotalQuestions>{totalQuestions}</StyledTotalQuestions>
+          </StyledH2>
         </StyledWrapper>
       </StyledFlex>
 

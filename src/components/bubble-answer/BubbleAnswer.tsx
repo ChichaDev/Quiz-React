@@ -32,7 +32,7 @@ export const BubbleAnswer = ({ answers }: BubbleAnswerProps) => {
         ))}
       </StyledBubbleContainer>
       <CustomButton disabled={selectedAnswers.length === 0} onClick={handleNextQuestion}>
-        Next
+        {t('Next')}
       </CustomButton>
     </StyledDiv>
   );

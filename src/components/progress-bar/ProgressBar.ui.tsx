@@ -38,4 +38,17 @@ export const StyledWrapper = styled.div`
 
 export const StyledFlex = styled.div`
   display: flex;
+  margin-bottom: 20px;
+`;
+
+export const StyledQuestionNumber = styled.span`
+  color: var(--primary-color);
+`;
+
+export const StyledSeparator = styled.span`
+  color: var(--color-basic-4);
+`;
+
+export const StyledTotalQuestions = styled.span`
+  color: var(--color-basic-4);
 `;
