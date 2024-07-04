@@ -13,6 +13,7 @@
   --input-color-secondary: #e4229b;
   --input-email-primary: #492752;
   --input-email-error-border: #d0006e;
+  --input-email-error-border: #d0007e;
 }
 
 html {
