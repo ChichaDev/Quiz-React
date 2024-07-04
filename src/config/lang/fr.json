@@ -1,34 +1,54 @@
 {
-  "question1": "What is your preferred language?",
-  "question1_description": "Choose language",
-  "answer1_1": "English",
-  "answer1_2": "French",
-  "answer1_3": "German",
-  "answer1_4": "Spanish",
-  "question2": "Quel genre vous identifiez-vous?",
-  "question2_description": "Veuillez partager comment vous identifiez",
-  "answer2_1": "Femme",
-  "answer2_2": "Homme",
-  "answer2_3": "Autre",
-  "question3": "Quel âge avez-vous?",
-  "answer3_1": "18-29 ans",
-  "answer3_2": "30-39 ans",
-  "answer3_3": "40-49 ans",
-  "answer3_4": "50+",
-  "question4": "Qu'est-ce que vous détestez le plus dans un livre?",
-  "answer4_1": "Manque de logique",
-  "answer4_2": "Une vitesse lente",
-  "answer4_3": "Manque d'humour",
-  "answer4_4": "Fin trop générique",
-  "question5": "Quels sont vos sujets préférés?",
-  "question5_description": "Choisissez jusqu'à 3 sujets que vous aimez",
-  "answer5_1": "Loup-garou",
-  "answer5_2": "Action",
-  "answer5_3": "Obsession royale",
-  "answer5_4": "Milliardaire",
-  "answer5_5": "Romance",
-  "answer5_6": "Jeune adulte",
-  "answer5_7": "Mauvais garçon",
+  "question1": {
+    "text": "What is your preferred language?",
+    "description": "Choose language",
+    "answers": {
+      "answer1": "English",
+      "answer2": "French",
+      "answer3": "German",
+      "answer4": "Spanish"
+    }
+  },
+  "question2": {
+    "text": "Quel genre vous identifiez-vous?",
+    "description": "Veuillez partager comment vous identifiez",
+    "answers": {
+      "answer1": "Femme",
+      "answer2": "Homme",
+      "answer3": "Autre"
+    }
+  },
+  "question3": {
+    "text": "Quel âge avez-vous?",
+    "answers": {
+      "answer1": "18-29 ans",
+      "answer2": "30-39 ans",
+      "answer3": "40-49 ans",
+      "answer4": "50+"
+    }
+  },
+  "question4": {
+    "text": "Qu'est-ce que vous détestez le plus dans un livre?",
+    "answers": {
+      "answer1": "Manque de logique",
+      "answer2": "Une vitesse lente",
+      "answer3": "Manque d'humour",
+      "answer4": "Fin trop générique"
+    }
+  },
+  "question5": {
+    "text": "Quels sont vos sujets préférés?",
+    "description": "Choisissez jusqu'à 3 sujets que vous aimez",
+    "answers": {
+      "answer1": "Loup-garou",
+      "answer2": "Action",
+      "answer3": "Obsession royale",
+      "answer4": "Milliardaire",
+      "answer5": "Romance",
+      "answer6": "Jeune adulte",
+      "answer7": "Mauvais garçon"
+    }
+  },
   "Next": "Suivant",
   "LoadingPage": {
     "description": "Recherche de collections pour vous..."

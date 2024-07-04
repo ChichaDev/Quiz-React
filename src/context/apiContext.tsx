@@ -12,10 +12,9 @@ interface ApiContextProps {
 export const ApiContext = createContext<ApiContextProps | undefined>(undefined);
 
 export const ApiProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const localStorageAdapter = useMemo(() => new LocalStorageAdapter(), []);
   const quizRepository = useMemo(
-    () => new StorageQuizRepository(localStorageAdapter),
-    [localStorageAdapter]
+    () => new StorageQuizRepository(new LocalStorageAdapter()),
+    []
   );
 
   return <ApiContext.Provider value={{ quizRepository }}>{children}</ApiContext.Provider>;

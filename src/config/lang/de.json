@@ -1,34 +1,54 @@
 {
-  "question1": "What is your preferred language?",
-  "question1_description": "Choose language",
-  "answer1_1": "English",
-  "answer1_2": "French",
-  "answer1_3": "German",
-  "answer1_4": "Spanish",
-  "question2": "Mit welchem Geschlecht identifizieren Sie sich?",
-  "question2_description": "Bitte teilen Sie uns mit, wie Sie sich identifizieren",
-  "answer2_1": "Weiblich",
-  "answer2_2": "Männlich",
-  "answer2_3": "Andere",
-  "question3": "Wie alt sind Sie?",
-  "answer3_1": "18-29 Jahre",
-  "answer3_2": "30-39 Jahre",
-  "answer3_3": "40-49 Jahre",
-  "answer3_4": "50+",
-  "question4": "Was hassen Sie am meisten an einem Buch?",
-  "answer4_1": "Mangel an Logik",
-  "answer4_2": "Langsame Geschwindigkeit",
-  "answer4_3": "Mangel an Humor",
-  "answer4_4": "Zu generisches Ende",
-  "question5": "Was sind Ihre Lieblingsthemen?",
-  "question5_description": "Wählen Sie bis zu 3 Themen aus, die Ihnen gefallen",
-  "answer5_1": "Werwolf",
-  "answer5_2": "Action",
-  "answer5_3": "Königliche Besessenheit",
-  "answer5_4": "Milliardär",
-  "answer5_5": "Romantik",
-  "answer5_6": "Jugend",
-  "answer5_7": "Böser Junge",
+  "question1": {
+    "text": "What is your preferred language?",
+    "description": "Choose language",
+    "answers": {
+      "answer1": "English",
+      "answer2": "French",
+      "answer3": "German",
+      "answer4": "Spanish"
+    }
+  },
+  "question2": {
+    "text": "Mit welchem Geschlecht identifizieren Sie sich?",
+    "description": "Bitte teilen Sie uns mit, wie Sie sich identifizieren",
+    "answers": {
+      "answer1": "Weiblich",
+      "answer2": "Männlich",
+      "answer3": "Andere"
+    }
+  },
+  "question3": {
+    "text": "Wie alt sind Sie?",
+    "answers": {
+      "answer1": "18-29 Jahre",
+      "answer2": "30-39 Jahre",
+      "answer3": "40-49 Jahre",
+      "answer4": "50+"
+    }
+  },
+  "question4": {
+    "text": "Was hassen Sie am meisten an einem Buch?",
+    "answers": {
+      "answer1": "Mangel an Logik",
+      "answer2": "Langsame Geschwindigkeit",
+      "answer3": "Mangel an Humor",
+      "answer4": "Zu generisches Ende"
+    }
+  },
+  "question5": {
+    "text": "Was sind Ihre Lieblingsthemen?",
+    "description": "Wählen Sie bis zu 3 Themen aus, die Ihnen gefallen",
+    "answers": {
+      "answer1": "Werwolf",
+      "answer2": "Action",
+      "answer3": "Königliche Besessenheit",
+      "answer4": "Milliardär",
+      "answer5": "Romantik",
+      "answer6": "Jugend",
+      "answer7": "Böser Junge"
+    }
+  },
   "Next": "Weiter",
   "LoadingPage": {
     "description": "Sammlungen für Sie finden …"

@@ -7,11 +7,9 @@ const useLanguage = () => {
   const { i18n } = useTranslation();
   const [language, setLanguage] = useState('en');
 
-  const localStorageAdapter = useMemo(() => new LocalStorageAdapter(), []);
-
   const quizRepository = useMemo(
-    () => new StorageQuizRepository(localStorageAdapter),
-    [localStorageAdapter]
+    () => new StorageQuizRepository(new LocalStorageAdapter()),
+    []
   );
 
   useEffect(() => {

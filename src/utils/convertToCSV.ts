@@ -1,7 +1,6 @@
 import { LocalStorageAdapter, StorageQuizRepository } from '@/api';
 
-const localStorageAdapter = new LocalStorageAdapter();
-const quizRepository = new StorageQuizRepository(localStorageAdapter);
+const quizRepository = new StorageQuizRepository(new LocalStorageAdapter());
 
 // prettier-ignore
 export function convertToCSV(data: any[]): string {

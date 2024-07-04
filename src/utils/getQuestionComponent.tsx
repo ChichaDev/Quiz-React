@@ -5,12 +5,12 @@ import type { Answer } from '@/types';
 
 interface Question {
   type: 'single' | 'multiple' | 'bubble';
-  answers: Answer[];
+  answers?: Answer[];
   name: string;
 }
 
-export const getQuestionComponent = (question: Question | undefined) => {
-  if (!question) {
+export const getQuestionComponent = (question: Question) => {
+  if (!question || !question.answers) {
     return <p>Unknown question type</p>;
   }
 

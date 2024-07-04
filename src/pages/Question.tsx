@@ -19,6 +19,10 @@ export const Question = () => {
 
   const { question } = useQuiz();
 
+  if (!question) {
+    return null;
+  }
+
   return (
     <StyledSection>
       <Container>

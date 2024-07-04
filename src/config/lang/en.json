@@ -1,34 +1,54 @@
 {
-  "question1": "What is your preferred language?",
-  "question1_description": "Choose language",
-  "answer1_1": "English",
-  "answer1_2": "French",
-  "answer1_3": "German",
-  "answer1_4": "Spanish",
-  "question2": "What gender do you identify with?",
-  "question2_description": "Please share how do you identify yourself",
-  "answer2_1": "Female",
-  "answer2_2": "Male",
-  "answer2_3": "Other",
-  "question3": "What is your age?",
-  "answer3_1": "18-29 years",
-  "answer3_2": "30-39 years",
-  "answer3_3": "40-49 years",
-  "answer3_4": "50+",
-  "question4": "What do you hate the most in a book?",
-  "answer4_1": "Lack of logic",
-  "answer4_2": "A slow speed",
-  "answer4_3": "Lack of humor",
-  "answer4_4": "Way too generic ending",
-  "question5": "What are your favorite topics?",
-  "question5_description": "Choose up to 3 topics you like",
-  "answer5_1": "Werewolf",
-  "answer5_2": "Action",
-  "answer5_3": "Royal Obsession",
-  "answer5_4": "Billionaire",
-  "answer5_5": "Romance",
-  "answer5_6": "Young Adult",
-  "answer5_7": "Bad Boy",
+  "question1": {
+    "text": "What is your preferred language?",
+    "description": "Choose language",
+    "answers": {
+      "answer1": "English",
+      "answer2": "French",
+      "answer3": "German",
+      "answer4": "Spanish"
+    }
+  },
+  "question2": {
+    "text": "What gender do you identify with?",
+    "description": "Please share how do you identify yourself",
+    "answers": {
+      "answer1": "Female",
+      "answer2": "Male",
+      "answer3": "Other"
+    }
+  },
+  "question3": {
+    "text": "What is your age?",
+    "answers": {
+      "answer1": "18-29 years",
+      "answer2": "30-39 years",
+      "answer3": "40-49 years",
+      "answer4": "50+"
+    }
+  },
+  "question4": {
+    "text": "What do you hate the most in a book?",
+    "answers": {
+      "answer1": "Lack of logic",
+      "answer2": "A slow speed",
+      "answer3": "Lack of humor",
+      "answer4": "Way too generic ending"
+    }
+  },
+  "question5": {
+    "text": "What are your favorite topics?",
+    "description": "Choose up to 3 topics you like",
+    "answers": {
+      "answer1": "Werewolf",
+      "answer2": "Action",
+      "answer3": "Royal Obsession",
+      "answer4": "Billionaire",
+      "answer5": "Romance",
+      "answer6": "Young Adult",
+      "answer7": "Bad Boy"
+    }
+  },
   "Next": "Next",
   "LoadingPage": {
     "description": "Finding collections for you..."

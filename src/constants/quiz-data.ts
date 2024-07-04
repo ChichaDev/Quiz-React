@@ -16,65 +16,65 @@ export const questions: Question[] = [
     id: 1,
     type: 'single',
     select: 'single',
-    name: 'question1',
+    name: 'question1.text',
     answers: [
-      { text: 'answer1_1' },
-      { text: 'answer1_2' },
-      { text: 'answer1_3' },
-      { text: 'answer1_4' }
+      { text: 'question1.answers.answer1' },
+      { text: 'question1.answers.answer2' },
+      { text: 'question1.answers.answer3' },
+      { text: 'question1.answers.answer4' }
     ],
-    description: 'question1_description'
+    description: 'question1.description'
   },
   {
     id: 2,
     type: 'single',
     select: 'single',
-    name: 'question2',
+    name: 'question2.text',
     answers: [
-      { text: 'answer2_1', img: Female },
-      { text: 'answer2_2', img: Male },
-      { text: 'answer2_3', img: Other }
+      { text: 'question2.answers.answer1', img: Female },
+      { text: 'question2.answers.answer2', img: Male },
+      { text: 'question2.answers.answer3', img: Other }
     ],
-    description: 'question2_description'
+    description: 'question2.description'
   },
   {
     id: 3,
     type: 'single',
     select: 'single',
-    name: 'question3',
+    name: 'question3.text',
     answers: [
-      { text: 'answer3_1' },
-      { text: 'answer3_2' },
-      { text: 'answer3_3' },
-      { text: 'answer3_4' }
+      { text: 'question3.answers.answer1' },
+      { text: 'question3.answers.answer2' },
+      { text: 'question3.answers.answer3' },
+      { text: 'question3.answers.answer4' }
     ]
   },
   {
     id: 4,
     type: 'multiple',
     select: 'multiple',
-    name: 'question4',
+    name: 'question4.text',
     answers: [
-      { text: 'answer4_1' },
-      { text: 'answer4_2' },
-      { text: 'answer4_3' },
-      { text: 'answer4_4' }
+      { text: 'question4.answers.answer1' },
+      { text: 'question4.answers.answer2' },
+      { text: 'question4.answers.answer3' },
+      { text: 'question4.answers.answer4' }
     ]
   },
   {
     id: 5,
     type: 'bubble',
     select: 'multiple',
-    name: 'question5',
+    name: 'question5.text',
     answers: [
-      { text: 'answer5_1', img: Wolf },
-      { text: 'answer5_2', img: Dance },
-      { text: 'answer5_3', img: Corn },
-      { text: 'answer5_4', img: Royal },
-      { text: 'answer5_5', img: Love },
-      { text: 'answer5_6', img: Young },
-      { text: 'answer5_7', img: Cowboy }
+      { text: 'question5.answers.answer1', img: Wolf },
+      { text: 'question5.answers.answer2', img: Dance },
+      { text: 'question5.answers.answer3', img: Corn },
+      { text: 'question5.answers.answer4', img: Royal },
+      { text: 'question5.answers.answer5', img: Love },
+      { text: 'question5.answers.answer6', img: Young },
+      { text: 'question5.answers.answer7', img: Cowboy }
     ],
-    description: 'question5_description'
+    description: 'question5.description'
   }
 ];

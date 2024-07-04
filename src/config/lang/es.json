@@ -1,34 +1,54 @@
 {
-  "question1": "What is your preferred language?",
-  "question1_description": "Choose language",
-  "answer1_1": "English",
-  "answer1_2": "French",
-  "answer1_3": "German",
-  "answer1_4": "Spanish",
-  "question2": "¿Con qué género te identificas?",
-  "question2_description": "Por favor, comparte cómo te identificas",
-  "answer2_1": "Femenino",
-  "answer2_2": "Masculino",
-  "answer2_3": "Otro",
-  "question3": "¿Cuál es tu edad?",
-  "answer3_1": "18-29 años",
-  "answer3_2": "30-39 años",
-  "answer3_3": "40-49 años",
-  "answer3_4": "50+",
-  "question4": "¿Qué odias más en un libro?",
-  "answer4_1": "Falta de lógica",
-  "answer4_2": "Velocidad lenta",
-  "answer4_3": "Falta de humor",
-  "answer4_4": "Final demasiado genérico",
-  "question5": "¿Cuáles son tus temas favoritos?",
-  "question5_description": "Elige hasta 3 temas que te gusten",
-  "answer5_1": "Hombre lobo",
-  "answer5_2": "Acción",
-  "answer5_3": "Obsesión real",
-  "answer5_4": "Multimillonario",
-  "answer5_5": "Romance",
-  "answer5_6": "Joven adulto",
-  "answer5_7": "Chico malo",
+  "question1": {
+    "text": "What is your preferred language?",
+    "description": "Choose language",
+    "answers": {
+      "answer1": "English",
+      "answer2": "French",
+      "answer3": "German",
+      "answer4": "Spanish"
+    }
+  },
+  "question2": {
+    "text": "¿Con qué género te identificas?",
+    "description": "Por favor, comparte cómo te identificas",
+    "answers": {
+      "answer1": "Femenino",
+      "answer2": "Masculino",
+      "answer3": "Otro"
+    }
+  },
+  "question3": {
+    "text": "¿Cuál es tu edad?",
+    "answers": {
+      "answer1": "18-29 años",
+      "answer2": "30-39 años",
+      "answer3": "40-49 años",
+      "answer4": "50+"
+    }
+  },
+  "question4": {
+    "text": "¿Qué odias más en un libro?",
+    "answers": {
+      "answer1": "Falta de lógica",
+      "answer2": "Velocidad lenta",
+      "answer3": "Falta de humor",
+      "answer4": "Final demasiado genérico"
+    }
+  },
+  "question5": {
+    "text": "¿Cuáles son tus temas favoritos?",
+    "description": "Elige hasta 3 temas que te gusten",
+    "answers": {
+      "answer1": "Hombre lobo",
+      "answer2": "Acción",
+      "answer3": "Obsesión real",
+      "answer4": "Multimillonario",
+      "answer5": "Romance",
+      "answer6": "Joven adulto",
+      "answer7": "Chico malo"
+    }
+  },
   "Next": "Siguiente",
   "LoadingPage": {
     "description": "Buscando colecciones para ti..."

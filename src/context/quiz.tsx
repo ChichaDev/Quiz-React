@@ -38,7 +38,7 @@ export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setCurrentQuestion(questionId);
   }, [id]);
 
-  const questionId = id ? parseInt(id, 10) : NaN;
+  const questionId = id ? parseInt(id, 10) : 1;
 
   const question = useMemo(
     () => questions.find((q) => q.id === questionId),
@@ -67,19 +67,20 @@ export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const handleSelectAnswer = (answer: Answer) => {
-    // Change language if it's the first question
     if (currentQuestion === 1) {
       handleLanguageChange(answer);
     }
+
     if (question?.select === 'multiple') {
       if (selectedAnswers.includes(answer.text)) {
         setSelectedAnswers(selectedAnswers.filter((item) => item !== answer.text));
       } else {
         setSelectedAnswers([...selectedAnswers, answer.text]);
       }
-    } else {
-      setSelectedAnswers([answer.text]);
+      return;
     }
+
+    setSelectedAnswers([answer.text]);
   };
 
   const handleNextQuestion = () => {

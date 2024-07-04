@@ -1,5 +1,4 @@
-import { URL } from '@/constants/api';
-
+const URL = 'https://example.com/';
 export async function getFromAPI(endpoint: string) {
   try {
     const response = await fetch(`${URL}/${endpoint}`);
