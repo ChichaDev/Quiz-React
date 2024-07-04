@@ -68,6 +68,8 @@ const Success: React.FC = () => {
 
   const handleRetakeQuiz = () => {
     deleteFromLocalStorage('quizResults');
+    deleteFromLocalStorage('selectedLanguage');
+
     navigate('/');
   };
 

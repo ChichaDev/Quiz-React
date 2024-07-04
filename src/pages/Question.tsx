@@ -24,7 +24,7 @@ export const Question = () => {
       <Container>
         <StyledWrapper>
           <ProgressBar />
-          <StyledH2>{t(question.name)}</StyledH2>
+          <StyledH2>{t(question?.name)}</StyledH2>
           {question?.description && <StyledP>{t(question.description)}</StyledP>}
           {getQuestionComponent(question)}
         </StyledWrapper>

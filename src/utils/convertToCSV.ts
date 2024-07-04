@@ -1,4 +1,4 @@
-import { getFromLocalStorage } from './localStorageUtils';
+import { localStorageAdapter } from '@/api';
 
 // prettier-ignore
 export function convertToCSV(data: any[]): string {
@@ -30,7 +30,7 @@ export function downloadCSV(csvContent: string, fileName: string) {
 }
 
 export function convertLocalStorageToCSV(key: string, fileName: string) {
-  const existingResults = getFromLocalStorage(key, []);
+  const existingResults = localStorageAdapter.getItem(key, []);
 
   const csvContent = convertToCSV(existingResults);
 

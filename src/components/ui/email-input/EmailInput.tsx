@@ -2,12 +2,12 @@ import { t } from 'i18next';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { localStorageAdapter } from '@/api';
 import { Container, StyledH2, StyledP } from '@/constants/theme';
 import { useQuiz } from '@/hooks/useQuiz';
-import { getFromLocalStorage, setToLocalStorage } from '@/utils/localStorageUtils';
 import { validateEmail } from '@/utils/validateEmail';
 
-import CustomButton from '../ui/button/Button';
+import CustomButton from '../button/Button';
 
 import {
   StyledErrorMessage,
@@ -39,11 +39,11 @@ const EmailInput: React.FC = () => {
         answer: email
       };
 
-      const existingResults = getFromLocalStorage('quizResults', []);
+      const existingResults = localStorageAdapter.getItem('quizResults', []);
 
       const updatedResults = [...existingResults, emailData];
 
-      setToLocalStorage(key, updatedResults);
+      localStorageAdapter.setItem(key, updatedResults);
       navigate('/success');
     }
   };

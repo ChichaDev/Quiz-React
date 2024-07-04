@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import EmailInput from '@/components/email-input/EmailInput';
+import EmailInput from '@/components/ui/email-input/EmailInput';
 import Loading from '@/components/ui/status/Loading';
 import { Container, StyledSection } from '@/constants/theme';
 

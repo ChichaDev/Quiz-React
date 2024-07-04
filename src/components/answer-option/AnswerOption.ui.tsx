@@ -3,7 +3,7 @@ import styled from 'styled-components';
 type AnswerButtonProps = {
   checked?: boolean;
 };
-
+// prettier-ignore
 export const StyledAnswerButton = styled.button<AnswerButtonProps>`
   display: flex;
   align-items: center;
@@ -11,10 +11,8 @@ export const StyledAnswerButton = styled.button<AnswerButtonProps>`
   border-width: 2px;
   border-style: solid;
   border-radius: 16px;
-  border-color: ${({ checked }) =>
-    checked ? 'var(--input-color-secondary)' : 'var(--input-color-primary)'};
-  background-color: ${({ checked }) =>
-    checked ? 'rgba(228, 34, 155, 0.2)' : 'var(--input-color-primary)'};
+  border-color: ${({ checked }) => (checked ? 'var(--input-color-secondary)' : 'var(--input-color-primary)')};
+  background-color: ${({ checked }) => (checked ? 'rgba(228, 34, 155, 0.2)' : 'var(--input-color-primary)')};
   color: var(--color-basic-3);
   padding: 21px 20px;
   font-size: 16px;

@@ -1,20 +1,18 @@
 :root {
-  --bg-color-basic: #1f002b;
-
-  --input-color-primary: #36173d;
-  --input-color-secondary: #e4229b;
-
-  --input-email-primary: #492752;
-  --input-email-error-border: #d0006e;
-
   --primary-color: #e4229c;
-
   --color-basic-1: #f2f3f5;
   --color-basic-2: #c4c8cc;
   --color-basic-3: #ffffff;
   --color-basic-4: #e8eaf2;
   --color-basic-5: #b6b8c3;
   --color-basic-6: #ececfb;
+
+  --bg-color-basic: #1f002b;
+
+  --input-color-primary: #36173d;
+  --input-color-secondary: #e4229b;
+  --input-email-primary: #492752;
+  --input-email-error-border: #d0006e;
 }
 
 html {
