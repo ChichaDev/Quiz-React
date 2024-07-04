@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { useQuiz } from '@/hooks/useQuiz';
 import type { Answer } from '@/types';
 
@@ -12,7 +14,7 @@ type MultipleAnswerProps = {
 
 export const MultipleAnswer = ({ answers }: MultipleAnswerProps) => {
   const { selectedAnswers, handleSelectAnswer, handleNextQuestion } = useQuiz();
-
+  const { t } = useTranslation();
   return (
     <StyledDiv>
       <StyledDiv>
@@ -23,7 +25,7 @@ export const MultipleAnswer = ({ answers }: MultipleAnswerProps) => {
             onClick={() => handleSelectAnswer(item)}
             key={index}
           >
-            {item.text}
+            {t(item.text)}
           </AnswerOption>
         ))}
       </StyledDiv>

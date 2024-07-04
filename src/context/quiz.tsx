@@ -1,9 +1,11 @@
+import { t } from 'i18next';
 import React, { createContext, useState, useMemo, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { questions } from '@/constants/quiz-data';
+import useLanguage from '@/hooks/useLanguage';
 import type { Answer, Question } from '@/types';
-import { getFromLocalStorage, setToLocalStorage } from '@/utils/getFromLocalStorage';
+import { getFromLocalStorage, setToLocalStorage } from '@/utils/localStorageUtils';
 
 interface QuizContextProps {
   currentQuestion: number;
@@ -22,8 +24,11 @@ export const QuizContext = createContext<QuizContextProps | undefined>(undefined
 export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const { changeLanguage } = useLanguage();
+
   const [currentQuestion, setCurrentQuestion] = useState<number>(1);
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
+
   const totalQuestions = questions.length;
 
   useEffect(() => {
@@ -38,7 +43,32 @@ export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children
     [questionId]
   );
 
+  const handleLanguageChange = (answer: Answer) => {
+    if (currentQuestion === 1) {
+      switch (answer.text) {
+        case 'answer1_1':
+          changeLanguage('en');
+          break;
+        case 'answer1_2':
+          changeLanguage('fr');
+          break;
+        case 'answer1_3':
+          changeLanguage('de');
+          break;
+        case 'answer1_4':
+          changeLanguage('es');
+          break;
+        default:
+          break;
+      }
+    }
+  };
+
   const handleSelectAnswer = (answer: Answer) => {
+    // Change language if it's the first question
+    if (currentQuestion === 1) {
+      handleLanguageChange(answer);
+    }
     if (question?.select === 'multiple') {
       if (selectedAnswers.includes(answer.text)) {
         setSelectedAnswers(selectedAnswers.filter((item) => item !== answer.text));
@@ -73,20 +103,32 @@ export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const saveResultsToStorage = () => {
-    if (question) {
-      const quizData = {
-        order: currentQuestion,
-        title: question.name,
-        type: question.type,
-        answer: selectedAnswers
-      };
-
-      const existingResults = getFromLocalStorage('quizResults', []);
-
-      const updatedResults = [...existingResults, quizData];
-
-      setToLocalStorage('quizResults', updatedResults);
+    if (!question) {
+      return;
     }
+    const localizedAnswers = selectedAnswers.map((answer) => t(answer));
+    const localizedTitle = t(question.name);
+
+    const quizData = {
+      order: currentQuestion,
+      title: localizedTitle,
+      type: question.type,
+      answer: localizedAnswers
+    };
+
+    const existingResults: Question[] = getFromLocalStorage('quizResults', []);
+
+    const existingIndex = existingResults.findIndex(
+      (result) => result.order === currentQuestion
+    );
+
+    if (existingIndex !== -1) {
+      existingResults[existingIndex] = quizData;
+    } else {
+      existingResults.push(quizData);
+    }
+
+    setToLocalStorage('quizResults', existingResults);
   };
 
   return (

@@ -1,3 +1,4 @@
+import { t } from 'i18next';
 import React, { useEffect, useState } from 'react';
 
 import { Container, StyledP } from '@/constants/theme';
@@ -43,7 +44,7 @@ const Loading: React.FC<LoadingProps> = ({ onLoadingComplete }) => {
           </svg>
           <StyledText>{percentage}%</StyledText>
         </SpinnerContainer>
-        <StyledP>Finding collections for you...</StyledP>
+        <StyledP>{t('LoadingPage.description')}</StyledP>
       </LoaderContainer>
     </Container>
   );

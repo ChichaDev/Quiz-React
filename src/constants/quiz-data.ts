@@ -16,65 +16,65 @@ export const questions: Question[] = [
     id: 1,
     type: 'single',
     select: 'single',
-    name: 'What is your preferred language?',
+    name: 'question1',
     answers: [
-      { text: 'English' },
-      { text: 'French' },
-      { text: 'German' },
-      { text: 'Spanish' }
+      { text: 'answer1_1' },
+      { text: 'answer1_2' },
+      { text: 'answer1_3' },
+      { text: 'answer1_4' }
     ],
-    description: 'Choose language'
+    description: 'question1_description'
   },
   {
     id: 2,
     type: 'single',
     select: 'single',
-    name: 'What gender do you identify with?',
+    name: 'question2',
     answers: [
-      { text: 'Female', img: Female },
-      { text: 'Male', img: Male },
-      { text: 'Other', img: Other }
+      { text: 'answer2_1', img: Female },
+      { text: 'answer2_2', img: Male },
+      { text: 'answer2_3', img: Other }
     ],
-    description: 'Please share how do you identify yourself'
+    description: 'question2_description'
   },
   {
     id: 3,
     type: 'single',
     select: 'single',
-    name: 'What is your age?',
+    name: 'question3',
     answers: [
-      { text: '18-29 years' },
-      { text: '30-39 years' },
-      { text: '40-49 year' },
-      { text: '50+' }
+      { text: 'answer3_1' },
+      { text: 'answer3_2' },
+      { text: 'answer3_3' },
+      { text: 'answer3_4' }
     ]
   },
   {
     id: 4,
     type: 'multiple',
     select: 'multiple',
-    name: 'What do you hate the most in a book?',
+    name: 'question4',
     answers: [
-      { text: 'Lack of logic' },
-      { text: 'A slow speed' },
-      { text: 'Lack of humor' },
-      { text: 'Way too generic ending' }
+      { text: 'answer4_1' },
+      { text: 'answer4_2' },
+      { text: 'answer4_3' },
+      { text: 'answer4_4' }
     ]
   },
   {
     id: 5,
     type: 'bubble',
     select: 'multiple',
-    name: 'What are your favorite topics?',
+    name: 'question5',
     answers: [
-      { text: 'Werewolf', img: Wolf },
-      { text: 'Action', img: Dance },
-      { text: 'Royal Obsession', img: Corn },
-      { text: 'Billionaire', img: Royal },
-      { text: 'Romance', img: Love },
-      { text: 'Young Adult', img: Young },
-      { text: 'Bad Boy', img: Cowboy }
+      { text: 'answer5_1', img: Wolf },
+      { text: 'answer5_2', img: Dance },
+      { text: 'answer5_3', img: Corn },
+      { text: 'answer5_4', img: Royal },
+      { text: 'answer5_5', img: Love },
+      { text: 'answer5_6', img: Young },
+      { text: 'answer5_7', img: Cowboy }
     ],
-    description: 'Choose up to 3 topics you like'
+    description: 'question5_description'
   }
 ];

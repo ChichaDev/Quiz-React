@@ -7,13 +7,14 @@ export const StyledFormContainer = styled.div`
   align-items: center;
   gap: 30px;
 `;
-
+// prettier-ignore
 export const StyledInput = styled.input<{ iserror: boolean }>`
   padding: 21px 20px;
   margin: 10px 0;
   border: 1px solid
-    ${({ hasError }) =>
-      hasError ? 'var(--input-email-error-border)' : 'var(--input-email-primary)'};
+    ${({ iserror }) => (iserror ?
+    'var(--input-email-error-border)' :
+    'var(--input-email-primary)')};
   border-radius: 16px;
   background-color: var(--input-email-primary);
   color: var(--color-basic-3);
@@ -40,4 +41,11 @@ export const StyledPrivacySpan = styled.span`
   line-height: 18px;
   text-align: center;
   color: var(--primary-color);
+`;
+
+export const StyledForm = styled.form`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 `;

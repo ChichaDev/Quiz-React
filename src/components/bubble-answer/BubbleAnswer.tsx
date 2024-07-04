@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { useQuiz } from '@/hooks/useQuiz';
 import type { Answer } from '@/types';
 
@@ -12,6 +14,7 @@ type BubbleAnswerProps = {
 
 export const BubbleAnswer = ({ answers }: BubbleAnswerProps) => {
   const { selectedAnswers, handleSelectAnswer, handleNextQuestion } = useQuiz();
+  const { t } = useTranslation();
 
   return (
     <StyledDiv>
@@ -24,7 +27,7 @@ export const BubbleAnswer = ({ answers }: BubbleAnswerProps) => {
             onClick={() => handleSelectAnswer(item)}
           >
             {item.img && <StyledBubbleImage alt='emoji' src={item.img} />}
-            {item.text}
+            {t(item.text)}
           </AnswerOption>
         ))}
       </StyledBubbleContainer>

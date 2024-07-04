@@ -1,0 +1,49 @@
+{
+  "question1": "What is your preferred language?",
+  "question1_description": "Choose language",
+  "answer1_1": "English",
+  "answer1_2": "French",
+  "answer1_3": "German",
+  "answer1_4": "Spanish",
+  "question2": "Mit welchem Geschlecht identifizieren Sie sich?",
+  "question2_description": "Bitte teilen Sie uns mit, wie Sie sich identifizieren",
+  "answer2_1": "Weiblich",
+  "answer2_2": "Männlich",
+  "answer2_3": "Andere",
+  "question3": "Wie alt sind Sie?",
+  "answer3_1": "18-29 Jahre",
+  "answer3_2": "30-39 Jahre",
+  "answer3_3": "40-49 Jahre",
+  "answer3_4": "50+",
+  "question4": "Was hassen Sie am meisten an einem Buch?",
+  "answer4_1": "Mangel an Logik",
+  "answer4_2": "Langsame Geschwindigkeit",
+  "answer4_3": "Mangel an Humor",
+  "answer4_4": "Zu generisches Ende",
+  "question5": "Was sind Ihre Lieblingsthemen?",
+  "question5_description": "Wählen Sie bis zu 3 Themen aus, die Ihnen gefallen",
+  "answer5_1": "Werwolf",
+  "answer5_2": "Action",
+  "answer5_3": "Königliche Besessenheit",
+  "answer5_4": "Milliardär",
+  "answer5_5": "Romantik",
+  "answer5_6": "Jugend",
+  "answer5_7": "Böser Junge",
+  "Next": "Weiter",
+  "LoadingPage": {
+    "description": "Sammlungen für Sie finden …"
+  },
+  "EmailPage": {
+    "heading": "Email",
+    "description": "Geben Sie Ihre E-Mail ein, um vollen Zugriff zu erhalten",
+    "placeholder": "Deine E-Mail",
+    "error": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "terms": "By continuing I agree with Privacy policy and Terms of use."
+  },
+  "SuccessPage": {
+    "heading": "Danke",
+    "description": "für die Unterstützung und das Bestehen des Quiz",
+    "downLoadButton": "Meine Antworten herunterladen",
+    "retakeButton": "Quiz wiederholen"
+  }
+}

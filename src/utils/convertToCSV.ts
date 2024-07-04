@@ -1,12 +1,11 @@
-import { getFromLocalStorage } from './getFromLocalStorage';
+import { getFromLocalStorage } from './localStorageUtils';
 
-// Функция для конвертации массива объектов в CSV формат
+// prettier-ignore
 export function convertToCSV(data: any[]): string {
   const header = Object.keys(data[0]).join('\t') + '\n';
 
   const rows = data
-    .map((row) =>
-      Object.values(row)
+    .map((row) => Object.values(row)
         .map((value) => `${value}`)
         .join('\t')
     )
@@ -15,7 +14,6 @@ export function convertToCSV(data: any[]): string {
   return header + rows;
 }
 
-// Функция для скачивания CSV файла
 export function downloadCSV(csvContent: string, fileName: string) {
   const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
 
@@ -31,14 +29,10 @@ export function downloadCSV(csvContent: string, fileName: string) {
   URL.revokeObjectURL(link.href);
 }
 
-// Функция для получения и конвертации данных из localStorage в CSV
 export function convertLocalStorageToCSV(key: string, fileName: string) {
-  // Получаем данные из localStorage
   const existingResults = getFromLocalStorage(key, []);
 
-  // Преобразуем данные в формат CSV
   const csvContent = convertToCSV(existingResults);
 
-  // Скачиваем CSV файл
   downloadCSV(csvContent, fileName);
 }

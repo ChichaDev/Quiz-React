@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { useQuiz } from '@/hooks/useQuiz';
 import type { Answer } from '@/types';
 
@@ -12,6 +14,7 @@ type SingleAnswerProps = {
 
 export const SingleAnswer = ({ answers }: SingleAnswerProps) => {
   const { selectedAnswers, handleSelectAnswer, handleNextQuestion } = useQuiz();
+  const { t } = useTranslation();
 
   return (
     <StyledDiv>
@@ -24,13 +27,13 @@ export const SingleAnswer = ({ answers }: SingleAnswerProps) => {
           >
             <StyledContent>
               {item.img && <BubbleImage alt='gender' src={item.img} />}
-              {item.text}
+              {t(item.text)}
             </StyledContent>
           </AnswerOption>
         ))}
       </StyledDiv>
       <CustomButton disabled={selectedAnswers.length === 0} onClick={handleNextQuestion}>
-        Next
+        {t('Next')}
       </CustomButton>
     </StyledDiv>
   );

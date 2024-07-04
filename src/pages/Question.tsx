@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 import ProgressBar from '@/components/progress-bar/ProgressBar';
@@ -14,14 +15,17 @@ const StyledWrapper = styled.div`
 `;
 
 export const Question = () => {
+  const { t } = useTranslation();
+
   const { question } = useQuiz();
+
   return (
     <StyledSection>
       <Container>
         <StyledWrapper>
           <ProgressBar />
-          <StyledH2>Question {question?.name}</StyledH2>
-          {question?.description && <StyledP>{question.description}</StyledP>}
+          <StyledH2>{t(question.name)}</StyledH2>
+          {question?.description && <StyledP>{t(question.description)}</StyledP>}
           {getQuestionComponent(question)}
         </StyledWrapper>
       </Container>

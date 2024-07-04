@@ -1,3 +1,4 @@
+import { t } from 'i18next';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -5,7 +6,7 @@ import CustomButton from '@/components/ui/button/Button';
 import Button from '@/components/ui/button/Button.ui';
 import { Container, StyledSection } from '@/constants/theme';
 import { convertLocalStorageToCSV } from '@/utils/convertToCSV';
-import { deleteFromLocalStorage } from '@/utils/getFromLocalStorage';
+import { deleteFromLocalStorage } from '@/utils/localStorageUtils';
 
 import CheckImg from '../img/checkmark.svg';
 import DownloadImg from '../img/download.svg';
@@ -78,8 +79,8 @@ const Success: React.FC = () => {
       <Container>
         <SuccessContainer>
           <div>
-            <StyledHeading>Thank you</StyledHeading>
-            <StyledDescription>for supporting us and passing quiz</StyledDescription>
+            <StyledHeading>{t('SuccessPage.heading')}</StyledHeading>
+            <StyledDescription>{t('SuccessPage.description')}</StyledDescription>
           </div>
           <div>
             <img src={CheckImg} alt='download' />
@@ -87,10 +88,12 @@ const Success: React.FC = () => {
           <StyledFooter>
             <DownloadButton onClick={handleDownloadCSV}>
               <img src={DownloadImg} alt='download' />
-              Download my answers
+              {t('SuccessPage.downLoadButton')}
             </DownloadButton>
           </StyledFooter>
-          <CustomButton onClick={handleRetakeQuiz}>Retake quiz</CustomButton>
+          <CustomButton onClick={handleRetakeQuiz}>
+            {t('SuccessPage.retakeButton')}
+          </CustomButton>
         </SuccessContainer>
       </Container>
     </StyledSection>

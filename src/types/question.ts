@@ -8,6 +8,6 @@ export type Question = {
   name: string;
   description?: string;
   type: 'single' | 'multiple' | 'bubble';
-  select: 'single' | 'multiple';
-  answers: Answer[];
+  select?: 'single' | 'multiple';
+  answers?: Answer[];
 };

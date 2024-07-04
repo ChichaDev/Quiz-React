@@ -1,9 +1,10 @@
+import { t } from 'i18next';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Container, StyledH2, StyledP } from '@/constants/theme';
 import { useQuiz } from '@/hooks/useQuiz';
-import { getFromLocalStorage, setToLocalStorage } from '@/utils/getFromLocalStorage';
+import { getFromLocalStorage, setToLocalStorage } from '@/utils/localStorageUtils';
 import { validateEmail } from '@/utils/validateEmail';
 
 import CustomButton from '../ui/button/Button';
@@ -13,6 +14,7 @@ import {
   StyledFormContainer,
   StyledInput,
   StyledFooter,
+  StyledForm,
   StyledPrivacySpan
 } from './EmailInput.ui';
 
@@ -26,7 +28,7 @@ const EmailInput: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateEmail(email)) {
-      setError('Please enter a valid email address');
+      setError(t('EmailPage.error'));
     } else {
       setError('');
       const key = 'quizResults';
@@ -50,23 +52,22 @@ const EmailInput: React.FC = () => {
     <Container>
       <StyledFormContainer>
         <>
-          <StyledH2>Email</StyledH2>
-          <StyledP>Enter your email to get full access</StyledP>
+          <StyledH2>{t('EmailPage.heading')}</StyledH2>
+          <StyledP>{t('EmailPage.description')}</StyledP>
         </>
 
-        <form onSubmit={handleSubmit}>
+        <StyledForm onSubmit={handleSubmit}>
           <StyledInput
             type='email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder='Your email'
-            hasError={!!error}
+            placeholder={t('EmailPage.placeholder')}
+            iserror={!!error}
           />
           {error && <StyledErrorMessage>{error}</StyledErrorMessage>}
-        </form>
+        </StyledForm>
         <StyledFooter>
-          By continuing I agree with <StyledPrivacySpan>Privacy policy</StyledPrivacySpan>{' '}
-          and <br /> <StyledPrivacySpan>Terms of use</StyledPrivacySpan>.
+          <StyledPrivacySpan>{t('EmailPage.terms')}</StyledPrivacySpan>
         </StyledFooter>
         <CustomButton disabled={email.length === 0} onClick={handleSubmit}>
           Next
