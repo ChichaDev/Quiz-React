@@ -110,8 +110,9 @@ export const QuizProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const localizedTitle = t(question.name);
 
     const quizData = {
+      id: question.id,
       order: currentQuestion,
-      title: localizedTitle,
+      name: localizedTitle,
       type: question.type,
       answer: localizedAnswers
     };

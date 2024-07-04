@@ -5,6 +5,7 @@ export type Answer = {
 
 export type Question = {
   id: number;
+  order: number;
   name: string;
   description?: string;
   type: 'single' | 'multiple' | 'bubble';
