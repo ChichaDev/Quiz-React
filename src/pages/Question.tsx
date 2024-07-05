@@ -15,7 +15,6 @@ const StyledWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   gap: 24px;
-  min-height: 100vh;
 `;
 
 export const Question = () => {

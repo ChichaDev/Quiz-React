@@ -18,7 +18,6 @@ const SuccessContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 30px;
-  min-height: 100vh;
 `;
 
 const StyledHeading = styled.h2`
