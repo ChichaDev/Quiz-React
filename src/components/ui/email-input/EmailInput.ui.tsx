@@ -6,6 +6,7 @@ export const StyledFormContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 30px;
+  min-height: 100vh;
 `;
 // prettier-ignore
 export const StyledInput = styled.input<{ iserror: boolean }>`

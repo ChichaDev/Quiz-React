@@ -10,6 +10,7 @@ const QuizStartWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  min-height: 100vh;
 `;
 
 export const Start = () => (
