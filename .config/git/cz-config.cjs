@@ -22,7 +22,7 @@ module.exports = {
     }
   ],
 
-  scopes: [{ name: 'react-test' }],
+  scopes: [{ name: 'react-quiz' }],
 
   messages: {
     type: "Select the type of change that you're committing:",

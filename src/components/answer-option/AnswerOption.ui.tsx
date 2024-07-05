@@ -7,7 +7,7 @@ type AnswerButtonProps = {
 export const StyledAnswerButton = styled.button<AnswerButtonProps>`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   border-width: 2px;
   border-style: solid;
   border-radius: 16px;
@@ -23,6 +23,10 @@ export const StyledAnswerButton = styled.button<AnswerButtonProps>`
     background-color: var(--disabled-background-color);
     color: var(--disabled-text-color);
     cursor: not-allowed;
+  }
+
+  @media (max-width: 630px) {
+    justify-content: space-between;
   }
 `;
 
