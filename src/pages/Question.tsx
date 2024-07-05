@@ -2,7 +2,10 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 import ProgressBar from '@/components/progress-bar/ProgressBar';
-import { Container, StyledH2, StyledP, StyledSection } from '@/constants/theme';
+import { Container } from '@/components/ui-kit/Container.ui';
+import { StyledH2 } from '@/components/ui-kit/H2.ui';
+import { StyledP } from '@/components/ui-kit/P.ui';
+import { StyledSection } from '@/components/ui-kit/Section.ui';
 import { useQuiz } from '@/hooks/useQuiz';
 import { getQuestionComponent } from '@/utils/getQuestionComponent';
 

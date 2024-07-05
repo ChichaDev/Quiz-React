@@ -11,17 +11,20 @@ export const StyledAnswerButton = styled.button<AnswerButtonProps>`
   border-width: 2px;
   border-style: solid;
   border-radius: 16px;
-  border-color: ${({ checked }) => (checked ? 'var(--input-color-secondary)' : 'var(--input-color-primary)')};
-  background-color: ${({ checked }) => (checked ? 'rgba(228, 34, 155, 0.2)' : 'var(--input-color-primary)')};
-  color: var(--color-basic-3);
+  border-color: ${({ theme, checked }) => (checked ?
+    theme.colors.inputColorSecondary :
+    theme.colors.inputColorPrimary)};
+   background-color: ${({ theme, checked }) => (checked ?
+    'rgba(228, 34, 155, 0.2)' :
+    theme.colors.inputColorPrimary)};
+  color: ${({ theme }) => theme.colors.basic3};
   padding: 21px 20px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 
   &:disabled {
-    background-color: var(--disabled-background-color);
-    color: var(--disabled-text-color);
+    opacity: 0.7;
     cursor: not-allowed;
   }
 
@@ -35,14 +38,14 @@ export const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
   appearance: none;
   width: 16px;
   height: 16px;
-  border: 2px solid var(--primary-color);
+  border: 2px solid ${({ theme }) => theme.colors.primary};
   border-radius: 4px;
   position: relative;
   cursor: pointer;
 
   &:checked {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
+    background-color: ${({ theme }) => theme.colors.primary};
+    border-color: ${({ theme }) => theme.colors.primary};
   }
 
   &:checked::before {
@@ -52,14 +55,14 @@ export const StyledCheckbox = styled.input.attrs({ type: 'checkbox' })`
     left: 50%;
     width: 5px;
     height: 10px;
-    border: solid var(--color-basic-3);
+    border: solid ${({ theme }) => theme.colors.basic3};
     border-width: 0 2px 2px 0;
     transform: translate(-50%, -50%) rotate(45deg);
   }
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(34, 139, 230, 0.5); /* Custom focus style */
+    box-shadow: 0 0 0 2px rgba(34, 139, 230, 0.5);
   }
 `;
 

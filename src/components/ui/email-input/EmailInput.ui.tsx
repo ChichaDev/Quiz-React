@@ -12,12 +12,12 @@ export const StyledInput = styled.input<{ iserror: boolean }>`
   padding: 21px 20px;
   margin: 10px 0;
   border: 1px solid
-    ${({ iserror }) => (iserror ?
-    'var(--input-email-error-border)' :
-    'var(--input-email-primary)')};
+    ${({ iserror, theme }) => (iserror ?
+     theme.colors.inputEmailErrorBorder :
+     theme.colors.inputEmailPrimary)};
   border-radius: 16px;
-  background-color: var(--input-email-primary);
-  color: var(--color-basic-3);
+  background-color: ${({ theme }) => theme.colors.inputEmailPrimary};
+  color: ${({ theme }) => theme.colors.basic3};
   font-size: 17px;
   line-height: 24px;
 `;
@@ -32,7 +32,7 @@ export const StyledFooter = styled.div`
   font-weight: 500;
   line-height: 18px;
   text-align: center;
-  color: var(--color-basic-5);
+  color: ${({ theme }) => theme.colors.basic5};
 `;
 
 export const StyledPrivacySpan = styled.span`
@@ -40,7 +40,7 @@ export const StyledPrivacySpan = styled.span`
   font-weight: 500;
   line-height: 18px;
   text-align: center;
-  color: var(--primary-color);
+  color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const StyledForm = styled.form`

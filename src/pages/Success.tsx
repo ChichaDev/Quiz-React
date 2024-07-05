@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 import CustomButton from '@/components/ui/button/Button';
 import Button from '@/components/ui/button/Button.ui';
-import { Container, StyledSection } from '@/constants/theme';
+import { Container } from '@/components/ui-kit/Container.ui';
+import { StyledSection } from '@/components/ui-kit/Section.ui';
 import { convertLocalStorageToCSV } from '@/utils/convertToCSV';
 import { deleteFromLocalStorage } from '@/utils/localStorageUtils';
 
@@ -20,17 +21,16 @@ const SuccessContainer = styled.div`
 `;
 
 const StyledHeading = styled.h2`
-  font-family: Niconne;
   font-size: 36px;
   font-weight: 400;
   line-height: 43.65px;
   text-align: center;
-  color: var(--color-basic-6);
+  color: ${({ theme }) => theme.colors.basic6};
   margin: 0;
 `;
 
 const StyledDescription = styled.div`
-  color: var(--color-basic-6);
+  color: ${({ theme }) => theme.colors.basic6};
   text-align: center;
   font-size: 17px;
   font-weight: 600;
@@ -46,7 +46,7 @@ const StyledFooter = styled.div`
   font-weight: 500;
   line-height: 25px;
   text-align: center;
-  color: var(--color-basic-6);
+  color: ${({ theme }) => theme.colors.basic6};
 `;
 
 const DownloadButton = styled(Button)`
@@ -56,7 +56,7 @@ const DownloadButton = styled(Button)`
   gap: 12px;
   background: transparent;
   border: none;
-  color: var(--color-basic-6);
+  color: ${({ theme }) => theme.colors.basic6};
   font-size: 17px;
   font-weight: 600;
   line-height: 25px;

@@ -2,7 +2,9 @@ import { t } from 'i18next';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Container, StyledH2, StyledP } from '@/constants/theme';
+import { Container } from '@/components/ui-kit/Container.ui';
+import { StyledH2 } from '@/components/ui-kit/H2.ui';
+import { StyledP } from '@/components/ui-kit/P.ui';
 import { useApi } from '@/hooks/useApi';
 import { useQuiz } from '@/hooks/useQuiz';
 import { validateEmail } from '@/utils/validateEmail';

@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-import { Container, StyledH1, StyledLink, StyledSection } from '@/constants/theme';
+import { Container } from '@/components/ui-kit/Container.ui';
+import { StyledH1 } from '@/components/ui-kit/H1.ui';
+import { StyledLink } from '@/components/ui-kit/Link.ui';
+import { StyledSection } from '@/components/ui-kit/Section.ui';
 
 const ErrorWrapper = styled.div`
   display: flex;

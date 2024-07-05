@@ -28,7 +28,7 @@ export const CircleBackground = styled.circle`
 
 export const CircleForeground = styled.circle`
   fill: none;
-  stroke: var(--primary-color);
+  stroke: ${({ theme }) => theme.colors.primary};
   stroke-width: 4;
   stroke-linecap: round;
   transform: rotate(-90deg);
@@ -39,7 +39,7 @@ export const CircleForeground = styled.circle`
 export const StyledText = styled.div`
   position: absolute;
   font-size: 1.2em;
-  color: var(--color-basic-3);
+  color: ${({ theme }) => theme.colors.basic3};
 `;
 
 export const LoaderContainer = styled.div`
