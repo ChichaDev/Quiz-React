@@ -2,12 +2,12 @@ import { t } from 'i18next';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-import CustomButton from '@/components/ui/button/Button';
-import Button from '@/components/ui/button/Button.ui';
-import { Container } from '@/components/ui-kit/Container.ui';
-import { StyledSection } from '@/components/ui-kit/Section.ui';
-import { convertLocalStorageToCSV } from '@/utils/convertToCSV';
-import { deleteFromLocalStorage } from '@/utils/localStorageUtils';
+import { useApi } from '@/hooks/useApi';
+import { Container } from '@/shared/ui-kit/Container.ui';
+import { StyledSection } from '@/shared/ui-kit/Section.ui';
+import CustomButton from '@/shared/ui-kit/button/Button';
+import Button from '@/shared/ui-kit/button/Button.ui';
+import { convertLocalStorageToCSV } from '@/shared/utils/convertToCSV';
 
 import CheckImg from '../img/checkmark.svg';
 import DownloadImg from '../img/download.svg';
@@ -65,10 +65,11 @@ const DownloadButton = styled(Button)`
 
 const Success: React.FC = () => {
   const navigate = useNavigate();
+  const { quizRepository } = useApi();
 
   const handleRetakeQuiz = () => {
-    deleteFromLocalStorage('quizResults');
-    deleteFromLocalStorage('selectedLanguage');
+    quizRepository.deleteQuizData('quizResults');
+    quizRepository.deleteQuizData('selectedLanguage');
 
     navigate('/');
   };

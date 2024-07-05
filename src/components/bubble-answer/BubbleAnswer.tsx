@@ -2,10 +2,10 @@ import { useTranslation } from 'react-i18next';
 
 import useMountAnimation from '@/hooks/useMountAnimation';
 import { useQuiz } from '@/hooks/useQuiz';
+import CustomButton from '@/shared/ui-kit/button/Button';
 import type { Answer } from '@/types';
 
 import AnswerOption from '../answer-option/AnswerOption';
-import CustomButton from '../ui/button/Button';
 
 import { StyledBubbleContainer, StyledBubbleImage, StyledDiv } from './BubbleAnswer.ui';
 

@@ -2,14 +2,14 @@ import { t } from 'i18next';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Container } from '@/components/ui-kit/Container.ui';
-import { StyledH2 } from '@/components/ui-kit/H2.ui';
-import { StyledP } from '@/components/ui-kit/P.ui';
 import { useApi } from '@/hooks/useApi';
 import { useQuiz } from '@/hooks/useQuiz';
-import { validateEmail } from '@/utils/validateEmail';
+import { StyledH2 } from '@/shared/ui-kit/H2.ui';
+import { StyledP } from '@/shared/ui-kit/P.ui';
+import { validateEmail } from '@/shared/utils/validateEmail';
 
-import CustomButton from '../button/Button';
+import CustomButton from '../../ui-kit/button/Button';
+import { Container } from '../Container.ui';
 
 import {
   StyledErrorMessage,

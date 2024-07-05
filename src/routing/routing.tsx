@@ -2,10 +2,10 @@ import { Route, createBrowserRouter, createRoutesFromElements } from 'react-rout
 
 import Email from '@/pages/Email';
 import { Error } from '@/pages/Error';
-import { Question } from '@/pages/Question';
 import { Root } from '@/pages/Root';
 import { Start } from '@/pages/Start';
 import Success from '@/pages/Success';
+import { Question } from '@/pages/question/Question';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(

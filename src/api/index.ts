@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
-import { deleteFromAPI, getFromAPI, postToAPI } from '@/utils/fetch';
+
+import { deleteFromAPI, getFromAPI, postToAPI } from '@/shared/utils/fetch';
 import {
   deleteFromLocalStorage,
   getFromLocalStorage,
   setToLocalStorage
-} from '@/utils/localStorageUtils';
+} from '@/shared/utils/localStorageUtils';
 
 export interface Storage {
   getItem(key: string): any;

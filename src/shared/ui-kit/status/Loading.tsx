@@ -1,8 +1,9 @@
 import { t } from 'i18next';
 import React, { useEffect, useState } from 'react';
 
-import { Container } from '@/components/ui-kit/Container.ui';
-import { StyledP } from '@/components/ui-kit/P.ui';
+import { StyledP } from '@/shared/ui-kit/P.ui';
+
+import { Container } from '../Container.ui';
 
 import {
   CircleBackground,

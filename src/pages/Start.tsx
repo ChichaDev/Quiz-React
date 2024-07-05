@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import { Container } from '@/components/ui-kit/Container.ui';
-import { StyledH1 } from '@/components/ui-kit/H1.ui';
-import { StyledLink } from '@/components/ui-kit/Link.ui';
-import { StyledSection } from '@/components/ui-kit/Section.ui';
+import { Container } from '@/shared/ui-kit/Container.ui';
+import { StyledH1 } from '@/shared/ui-kit/H1.ui';
+import { StyledLink } from '@/shared/ui-kit/Link.ui';
+import { StyledSection } from '@/shared/ui-kit/Section.ui';
 
 const QuizStartWrapper = styled.div`
   display: flex;

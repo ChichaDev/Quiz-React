@@ -2,12 +2,13 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 import ProgressBar from '@/components/progress-bar/ProgressBar';
-import { Container } from '@/components/ui-kit/Container.ui';
-import { StyledH2 } from '@/components/ui-kit/H2.ui';
-import { StyledP } from '@/components/ui-kit/P.ui';
-import { StyledSection } from '@/components/ui-kit/Section.ui';
 import { useQuiz } from '@/hooks/useQuiz';
-import { getQuestionComponent } from '@/utils/getQuestionComponent';
+import { Container } from '@/shared/ui-kit/Container.ui';
+import { StyledH2 } from '@/shared/ui-kit/H2.ui';
+import { StyledP } from '@/shared/ui-kit/P.ui';
+import { StyledSection } from '@/shared/ui-kit/Section.ui';
+
+import { getQuestionComponent } from './getQuestionComponent';
 
 const StyledWrapper = styled.div`
   display: flex;

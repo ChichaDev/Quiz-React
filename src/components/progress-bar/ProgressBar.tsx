@@ -1,8 +1,8 @@
 import { useQuiz } from '@/hooks/useQuiz';
+import { Container } from '@/shared/ui-kit/Container.ui';
+import { StyledH2 } from '@/shared/ui-kit/H2.ui';
 
 import BackBtn from '../../img/backdown.svg';
-import { Container } from '../ui-kit/Container.ui';
-import { StyledH2 } from '../ui-kit/H2.ui';
 
 import {
   BackDownBtn,
