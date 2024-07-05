@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const StyledBubbleContainer = styled.div`
@@ -17,7 +18,7 @@ export const StyledBubbleImage = styled.img`
   height: auto;
 `;
 
-export const StyledDiv = styled.div`
+export const StyledDiv = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 16px;

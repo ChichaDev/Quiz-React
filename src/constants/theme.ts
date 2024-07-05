@@ -12,7 +12,7 @@ export const theme = {
     inputColorSecondary: '#e4229b',
     inputEmailPrimary: '#492752',
     inputEmailErrorBorder: '#d0006e'
-  }
+  } as const
 };
 
 export type ThemeType = typeof theme;

@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
+import useMountAnimation from '@/hooks/useMountAnimation';
 import { useQuiz } from '@/hooks/useQuiz';
 import type { Answer } from '@/types';
 
@@ -15,9 +16,15 @@ type BubbleAnswerProps = {
 export const BubbleAnswer = ({ answers }: BubbleAnswerProps) => {
   const { selectedAnswers, handleSelectAnswer, handleNextQuestion } = useQuiz();
   const { t } = useTranslation();
+  const { isAnimated, key } = useMountAnimation(answers);
 
   return (
-    <StyledDiv>
+    <StyledDiv
+      key={key}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: isAnimated ? 1 : 0, y: isAnimated ? 0 : 20 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+    >
       <StyledBubbleContainer>
         {answers.map((item, index) => (
           <AnswerOption
